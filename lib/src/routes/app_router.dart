@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:supabase_auth/src/featured/root/root_screen.dart';
-import 'package:supabase_auth/src/routes/routes.dart';
+
+import '../features/root/root_screen.dart';
+import 'routes.dart';
 
 final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
 

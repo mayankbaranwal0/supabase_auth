@@ -1,4 +1,4 @@
-import 'package:supabase_auth/bootstrap.dart';
+import 'bootstrap.dart';
 
 void main() async {
   bootstrap();
