@@ -39,7 +39,7 @@ class OnboardingScreen extends ConsumerWidget {
             ),
             gapH4,
             Text(
-              'No texts, no waiting-just quick video calls with real people.',
+              'Supabase Auth App',
               style: TextStyle(
                 fontSize: 18,
                 color: AppColors.black.withOpacity(0.6),

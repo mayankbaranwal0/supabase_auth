@@ -10,6 +10,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  flutter_dotenv: ^5.2.1
   flutter_riverpod: ^2.6.1
   go_router: ^14.8.1
   supabase_flutter: ^2.8.4
@@ -22,3 +23,7 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/fonts/
+    - assets/images/
+    - .env
