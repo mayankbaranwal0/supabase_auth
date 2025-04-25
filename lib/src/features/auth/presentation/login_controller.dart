@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../data/supabase_signin_repo.dart';
-import 'profile_controller.dart'; // Make sure this contains EmailAuthRepo and emailAuthRepoProvider
+import 'profile_controller.dart'; // Ensure this contains EmailAuthRepo and emailAuthRepoProvider
 
 final loginController =
     StateNotifierProvider<LoginController, AsyncValue<void>>(
@@ -40,6 +40,18 @@ class LoginController extends StateNotifier<AsyncValue<void>> {
       await profile.init();
       state = const AsyncData(null);
     } on AuthException catch (e, st) {
+      state = AsyncError(e.message, st);
+    }
+  }
+
+  Future<void> signInWithGoogle() async {
+    state = const AsyncLoading();
+    try {
+      await ref.read(supabaseSigninRepoProvider).googleSignIn();
+      await profile.init();
+      state = const AsyncData(null);
+    } on AuthException catch (e, st) {
+      print(e.message);
       state = AsyncError(e.message, st);
     }
   }

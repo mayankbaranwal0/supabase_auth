@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../constants/app_assets.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_sizes.dart';
 import '../../../shared/widgets/custom_button.dart';
@@ -74,6 +76,31 @@ class LoginScreen extends ConsumerWidget {
                     fontFamily: AppFonts.radioCanadaBig,
                   ),
                   textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            gapH20,
+            CustomButton.secondary(
+              onPressed: () =>
+                  ref.read(loginController.notifier).signInWithGoogle(),
+              child: otpLogin.maybeWhen(
+                loading: () => const CircularProgressIndicator(),
+                orElse: () => Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(AppAssets.google),
+                    gapW8,
+                    Text(
+                      'Login with Google',
+                      style: TextStyle(
+                        fontSize: 18,
+                        color: AppColors.black,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: AppFonts.radioCanadaBig,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
                 ),
               ),
             ),

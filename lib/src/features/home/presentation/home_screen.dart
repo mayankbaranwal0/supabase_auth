@@ -18,7 +18,7 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text('Home'),
       ),
-      body: SingleChildScrollView(
+      body: Padding(
         padding: EdgeInsets.all(24),
         child: Column(
           children: [

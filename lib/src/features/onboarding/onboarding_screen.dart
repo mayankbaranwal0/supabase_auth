@@ -33,7 +33,7 @@ class OnboardingScreen extends ConsumerWidget {
               'Onboard',
               style: TextStyle(
                 fontSize: 40,
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.bold,
                 fontFamily: AppFonts.radioCanadaBig,
               ),
             ),

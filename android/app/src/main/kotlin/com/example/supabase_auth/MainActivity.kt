@@ -1,4 +1,4 @@
-package com.example.supabase_auth
+package com.mayankbaranwal.supabaseauth
 
 import io.flutter.embedding.android.FlutterActivity
 

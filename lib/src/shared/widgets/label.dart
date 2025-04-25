@@ -23,7 +23,7 @@ class Label extends StatelessWidget {
           style: TextStyle(
             fontSize: 24,
             color: AppColors.black,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.bold,
             fontFamily: AppFonts.radioCanadaBig,
           ),
         ),
@@ -33,7 +33,7 @@ class Label extends StatelessWidget {
           style: TextStyle(
             fontSize: 16,
             color: AppColors.black.withOpacity(0.7),
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w400,
             fontFamily: AppFonts.radioCanadaBig,
           ),
         ),
