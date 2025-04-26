@@ -49,7 +49,15 @@ class SupabaseSigninRepoImpl implements SupabaseSigninRepo {
 
   @override
   Future<void> deleteUser() async {
-    await _supabase.auth.admin.deleteUser(_supabase.auth.currentUser!.id);
+    // await _supabase.auth.admin.deleteUser(_supabase.auth.currentUser!.id);
+    await _supabase.functions.invoke('delete_user_account');
+
+    // if (response.error != null) {
+    //   throw Exception(response.error!.message);
+    // }
+
+    // Clear local auth state
+    await _supabase.auth.signOut();
   }
 
   @override
@@ -61,6 +69,7 @@ class SupabaseSigninRepoImpl implements SupabaseSigninRepo {
   Future<void> googleSignIn() async {
     /// Web Client ID that you registered with Google Cloud.
     final webClientId = dotenv.env['WEB_CLIENT_ID']!;
+
     /// iOS Client ID that you registered with Google Cloud.
     final iosClientId = dotenv.env['IOS_CLIENT_ID']!;
     final GoogleSignIn googleSignIn = GoogleSignIn(
